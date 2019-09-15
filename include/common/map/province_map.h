@@ -14,3 +14,6 @@
 * @date		2019.9.15															*
 * @license	GNU Gerneral Public License (GPL)									*
 ********************************************************************************/
+
+///* include */
+#include "province_map.cxx"

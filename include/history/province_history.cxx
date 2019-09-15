@@ -17,10 +17,12 @@
 ********************************************************************************/
 
 ///* include */
-#include "province_history.h"
+//#include "province_history.h"
 
 #include <string>
 #include <list>
+
+using namespace std;
 
 ///* class */
 /**

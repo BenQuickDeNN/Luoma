@@ -17,20 +17,27 @@
 ********************************************************************************/
 
 ///* include */
-#include "province_map.h"
+//#include "province_map.h"
 //#include "../../history/province_history.h"
 
 #include <string>
 #include <list>
 
+using namespace std;
+
 ///* class */
 /**
 * @brief help process default.txt file
 */
-class MapDefault
+class Map
 {
 public:
-	unsigned int	max_province;	///< the maximum number of provinces
+	unsigned int		width;			///< the width of the map
+	unsigned int 		height;			///< the height of the map
+	unsigned int		max_province;	///< the maximum number of provinces
+	list<unsigned int> 	sea_provinces;	///< sea provinces id
+	list<unsigned int>	lake_provinces;	///< lake provinces id
+	
 };
 /**
 * @brief definition of a province
@@ -39,7 +46,7 @@ public:
 class ProvinceDef
 {
 public:
-	unsigned int			prov_id		///< province id
+	unsigned int			prov_id;	///< province id
 	unsigned short			red;		///< red value
 	unsigned short			green;		///< green value
 	unsigned short			blue;		///< blue value
@@ -78,8 +85,8 @@ public:
 */
 class Terrain
 {
-	string				name;		///< the name of terrain
-	list<unsigned int>	provinces;	///< contained provinces id
+	string				name;			///< the name of terrain
+	list<unsigned int>	terr_override;	///< contained provinces id
 };
 /**
 * @brief location definition
@@ -87,9 +94,50 @@ class Terrain
 class Location
 {
 public:
-	int	x;
-	int	y;
-	int	z;
+	float	x;
+	float	y;
+};
+/**
+* @brief location of province
+*/
+class ProvLocation
+{
+public:
+	Location	city_loc;			///< location of city
+	Location	port_loc;			///< location of port
+	Location	unit_loc;			///< location of unit
+	Location	unit_combat_loc;	///< location of unit combat
+	Location	traderoute_loc;		///< location of traderoute
+	Location	tradewind_loc;		///< location of tradewind
+	Location	text_loc;			///< location of text
+};
+/**
+* @brief rotation of province
+*/
+class ProvRotation
+{
+public:
+	float	city_rot;			///< rotation of city
+	float	port_loc;			///< rotation of port
+	float	unit_rot;			///< rotation of unit
+	float	unit_combat_rot;	///< rotation of unit combat
+	float	traderoute_rot;		///< rotation of traderoute
+	float	tradewind_rot;		///< rotation of tradewind
+	float	text_rot;			///< rotation of text
+};
+/**
+* @brief height of province
+*/
+class ProvHeight
+{
+public:
+	float	city_hgh;			///< height of city
+	float	port_hgh;			///< height of port
+	float	unit_hgh;			///< height of unit
+	float	unit_combat_hgh;	///< height of unit combat
+	float	traderoute_hgh;		///< height of traderoute
+	float 	tradewind_hgh;		///< height of tradewind
+	float	text_hgh;			///< height	of text
 };
 /**
 * @brief position definition
@@ -98,12 +146,7 @@ class Position
 {
 public:
 	unsigned int	prov_id;	///< province id
-	/* location */
-	Location	city_loc;			///< location of city
-	Location	port_loc;			///< location of port
-	Location	unit_loc;			///< location of unit
-	Location	unit_combat_loc;	///< location of unit combatation
-	Location	traderoute_loc;		///< location of traderoute
-	Location	tradewind_loc;		///< location of tradewind
-	/* rotation */
+	ProvLocation	location;	///< location
+	ProvRotation	rotation;	///< rotation
+	ProvHeight		height;		///< height
 };

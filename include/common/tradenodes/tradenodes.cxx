@@ -7,7 +7,7 @@
 * This program is free software; you can redistribute it and/or modify			*
 *																				*
 * @file		tradenodes.cxx														*
-* @brief	main file for commandline.											*
+* @brief	Define the tradenodes.												*
 * Details.																		*
 * @author	Bin.Qu																*
 * @email	benquickdenn@foxmail,com											*
@@ -16,41 +16,14 @@
 * @license	GNU Gerneral Public License (GPL)									*
 ********************************************************************************/
 
-///* public include */
-#include <stdio.h>
+///* include */
+#include "tradenodes.h"
 
-///* my include */
-#include "../include/common/map/province_map.h"
-#include "../include/history/province_history.h"
+#include <list>
 
-///* class declaration */
-//class Map;
-//class ProvinceHistory;
-
-///* function declaration */
-void test();
-
-///* main function */
-/**
-* @brief main function for CLI
-* @param argc count of arguments
-* @param argv value of arguments
-* @return program state
-*/
-int main(int argc, char **argv)
+///* class */
+class TradeNode
 {
-	printf("Welcome to Luoma!\r\n");
-	test();
-	return 0;
-}
-///* other functions */
-/**
-* @brief function for testing
-*/
-void test()
-{
-	Map map;
-	map.width = 400;
-	map.height = 300;
-	printf("map.width = %d, map.height = %d\r\n", map.width, map.height);
-}
+public:
+	list<unsigned int>	members;	///< provinces id in this trade node
+};
