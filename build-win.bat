@@ -9,6 +9,8 @@ echo "set path of include files"
 SET path_bin=bin/win
 SET filename_luoma_cli=luoma_cli.exe
 
+SET path_include=include
+
 SET path_common_map=include/common/map
 SET srcname_prov_map=province_map.cxx
 

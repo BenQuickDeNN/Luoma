@@ -20,8 +20,8 @@
 #include <stdio.h>
 
 ///* my include */
-#include "../include/common/map/province_map.h"
-#include "../include/history/province_history.h"
+#include "common/map/province_map.h"
+#include "history/province_history.h"
 
 ///* class declaration */
 //class Map;
@@ -39,8 +39,8 @@ void test();
 */
 int main(int argc, char **argv)
 {
-	printf("Welcome to Luoma!\r\n");
-	test();
+	//printf("Welcome to Luoma!\r\n");
+	//test();
 	return 0;
 }
 ///* other functions */
