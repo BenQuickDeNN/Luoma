@@ -6,8 +6,8 @@
 *																				*
 * This program is free software; you can redistribute it and/or modify			*
 *																				*
-* @file		constant.cxx														*
-* @brief	Define constant variables of the project.							*
+* @file		options.cxx														*
+* @brief	This file helps to handle commandline option.						*
 * Details.																		*
 * @author	Bin.Qu																*
 * @email	benquickdenn@foxmail,com											*
@@ -17,6 +17,31 @@
 ********************************************************************************/
 
 ///* include */
-#include "constant.h"
+#include <iostream>
+#include <cstring>
 
-///* definition */
+#include "text.h"
+
+using namespace std;
+
+/**
+* @brief check if an input option is legal
+* @param argc the count of arguments
+* @param argv the value of arguments
+*/
+void checkOption(int argc, char **argv)
+{
+	if (argc < 2) return;
+	int option_key = -1;
+	for (int i = 0; i < MAX_NUM_OPTION; i++)
+	{
+		if (!strcmp(option_list[i][0].c_str(), argv[1]))
+		{
+			cout << outputText_list[i];
+			option_key = i;
+			break;
+		}
+	}
+	if (option_key == -1) cout << outputText_list[MAX_NUM_TEXT - 1];
+	return;
+}

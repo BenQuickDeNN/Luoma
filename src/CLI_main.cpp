@@ -16,16 +16,13 @@
 * @license	GNU Gerneral Public License (GPL)									*
 ********************************************************************************/
 
-///* public include */
+///* global include */
 #include <stdio.h>
 
-///* my include */
-#include "common/map/province_map.h"
-#include "history/province_history.h"
-
-///* class declaration */
-//class Map;
-//class ProvinceHistory;
+///* local include */
+#include "common.h"
+#include "history.h"
+#include "cli.h"
 
 ///* function declaration */
 void test();
@@ -39,8 +36,7 @@ void test();
 */
 int main(int argc, char **argv)
 {
-	//printf("Welcome to Luoma!\r\n");
-	//test();
+	checkOption(argc, argv);
 	return 0;
 }
 ///* other functions */
@@ -49,8 +45,8 @@ int main(int argc, char **argv)
 */
 void test()
 {
-	Map map;
-	map.width = 400;
-	map.height = 300;
-	printf("map.width = %d, map.height = %d\r\n", map.width, map.height);
+	map::Map myMap;
+	myMap.width = 400;
+	myMap.height = 300;
+	printf("map.width = %d, map.height = %d\r\n", myMap.width, myMap.height);
 }
