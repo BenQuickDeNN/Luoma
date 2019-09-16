@@ -6,7 +6,7 @@
 *																				*
 * This program is free software; you can redistribute it and/or modify			*
 *																				*
-* @file		tradenodes.cxx														*
+* @file		CLI_main.cpp														*
 * @brief	main file for commandline.											*
 * Details.																		*
 * @author	Bin.Qu																*
